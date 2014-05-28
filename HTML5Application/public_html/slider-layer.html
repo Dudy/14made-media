@@ -20,15 +20,17 @@
 	<link rel="stylesheet" type="text/css" href="css/ie8-and-down.css" />
 <![endif]-->
 
+
 <!-- **Google Fonts** -->
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
 
+
 <!-- **jQuery** -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
+
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
 <script type="text/javascript" src="js/controlpanel.js"></script>
 
-<script type="text/javascript" src="js/jquery.tabs.min.js"></script>
 <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
 <script type="text/javascript" src="js/tinynav.min.js"></script>
 <script type="text/javascript" src="js/ultimate-custom.js"></script>
@@ -52,12 +54,16 @@ jQuery(function($){
 	$(document).ready(function(){
 		$('#layerslider').layerSlider({
 			skinsPath : 'images/layer-skins/',
-			skin : 'fullwidth',
-			thumbnailNavigation : 'hover',
 			hoverPrevNext : false,
-			responsive : false,
-			responsiveUnder : 940,
-			sublayerContainer : 900
+			skin : 'borderlesslight',
+			cbInit				: function(element){jQuery('.c-api').append(jQuery('<span>function cbInit() called</span><br>'));},
+			cbStart				: function(data){jQuery('.c-api').append( jQuery('<span>function cbStart() called</span><br>'));},
+			cbStop				: function(data){jQuery('.c-api').append( jQuery('<span>function cbStop() called</span><br>'));},
+			cbPause				: function(data){jQuery('.c-api').append( jQuery('<span>function cbPause() called (pauseOnHover)</span><br>'));},
+			cbAnimStart			: function(data){jQuery('.c-api').append( jQuery('<span>function cbAnimStart() called, current layer is: '+data.curLayerIndex+', next layer is: '+data.nextLayerIndex+'</span><br>'));},
+			cbAnimStop			: function(data){jQuery('.c-api').append( jQuery('<span>function cbAnimStop() called</span><br>'));},
+			cbPrev				: function(data){jQuery('.c-api').append( jQuery('<span>function cbPrev() called</span><br>'));},
+			cbNext				: function(data){jQuery('.c-api').append( jQuery('<span>function cbNext() called</span><br>'));}
 		});
 	});		
 </script>	
@@ -119,7 +125,7 @@ jQuery(function($){
         <div class="container">
         
             <ul class="menu">
-                <li class="home current_page_item">  <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="index.html" title=""> Home </a> 
+                <li class="home">  <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="index.html" title=""> Home </a> 
                     <ul>
                         <li> <a href="index-v2.html" title=""> Home - Multi Purpose </a> </li>
                         <li> <a href="index-v3.html" title=""> Home - Portfolio </a> </li>
@@ -132,7 +138,7 @@ jQuery(function($){
                         <li> <a href="slider-nivo.html" title=""> Nivo Slider </a> </li>
                         <li> <a href="slider-anything.html" title=""> Anything Slider </a> </li>
                         <li> <a href="slider-touch.html" title=""> Touch Slider </a> </li>
-                        <li> <a href="slider-layer.html" title=""> Layer Slider </a> </li>
+                        <li class="current_page_item"> <a href="slider-layer.html" title=""> Layer Slider </a> </li>
                         <li> <a href="slider-cycle.html" title=""> Cycle Slider </a> </li>
                     </ul>                
                 </li> 
@@ -224,29 +230,134 @@ jQuery(function($){
     <div id="home-slider">
         <!-- **Home Slider BG** -->
         <div class="home-slider-bg">
+        	
             
-            <!-- Layer Slider Container -->
-            <div id="layerslider-container-fw">                
-                <div id="layerslider" style="width:100%; height: 420px; margin: 0px auto; ">
-    
-                    <div class="ls-layer" style="slidedirection: top; slidedelay: 7000; durationin: 1500; durationout: 1500; delayout: 500;">
-                        <img src="images/layer-gallery/fw1.jpg" class="ls-bg" alt="" title="" />
-                        <p class="ls-s2 l23-s1" style="position: absolute; top:85%; left: 50%; slidedirection : bottom; slideoutdirection : top; durationin : 750; durationout : 750; easingin : easeOutBack; easingout : easeInBack; delayin : 1000;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elit sapien </p>    
-                    </div>
-    
-                    <div class="ls-layer" style="slidedirection: right; slidedelay: 7000; durationin: 1500; durationout: 1500;">    
-                        <img src="images/layer-gallery/fw3.jpg" class="ls-bg" alt="" title="" />
-                        <p class="ls-s2 l22-s1" style="position: absolute; top:75%; left: 0px; slidedirection : right; slideoutdirection : left; durationin : 1500; durationout : 750; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin : 1000;">Sed a posuere mauris. Integer justo sem, venenatis vitae elementum non, porta sit amet quam</p>
-                        <p class="ls-s3 l22-s1" style="position: absolute; top:85%; left: 0px; slidedirection : right; slideoutdirection : left; durationin : 1500; durationout : 750; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin : 1500;"> Cras elementum varius dictum. Sed viverra sodales sollicitudin. Duis vel urna odio </p>    
-                    </div>
-    
-                    <div class="ls-layer" style="slidedirection: top; slidedelay: 7000; durationin: 1500; durationout: 1500; delayout: 500;">    
-                        <img src="images/layer-gallery/fw2.jpg" class="ls-bg" alt="" title="" />
-                        <p class="ls-s2 l23-s1" style="position: absolute; top:85%; left: 50%; slidedirection : top; slideoutdirection : bottom; durationin : 750; durationout : 750; easingin : easeOutBack; easingout : easeInBack; delayin : 1000;">Praesent nunc nisi, tempor eu ullamcorper non, fermentum at massa  </p>
-                    </div>
-    
-                </div><!-- Layer Slider -->                            
-            </div><!-- Layer Slider Container -->
+                <!-- **Layer Slider Container** -->
+                <div id="layerslider-container">	
+                    <!-- **Layer Slider** -->
+                    <div id="layerslider" style="width:1000px; height:420px; margin: 0 auto;">
+                    
+                    
+<div class="ls-layer" style="slidedelay: 7000;">
+
+					<img src="images/layer-gallery/tn_1_1.jpg" class="ls-tn" alt="" title="" />
+					<img src="images/layer-gallery/l12.jpg" class="ls-bg" alt="" title="" />
+					<img class="ls-s4" id="sss" src="images/layer-gallery/l13.png" style="top: -101px; left: 105px; slidedirection : left;" alt="" title="" />
+					<h1 class="ls-s5 l1-s1" style="top:200px; left: 303px; slidedirection : top;">
+						LayerSlider
+					</h1>
+					<h1 class="ls-s2 l1-s1b" style="top:200px; left: 303px; slidedirection : fade; slideoutdirection : fade;durationin : 1700; durationout : 2700; easingin : easeInOutQuad; easingout : easeInOutQuad; delayin : 1500; showuntil : 1600;">
+						LayerSlider
+					</h1>
+					<img class="ls-s7" src="images/layer-gallery/l16.png" style="top: 234px; left: -21px; slidedirection : bottom;" alt="" title="" />
+					<img class="ls-s2" src="images/layer-gallery/l17.png" style="top: -219px; left: 548px; slidedirection : top;" alt="" title="" />
+					<h2  class="ls-s2 l1-s3" style="top:330px; left: 400px; slidedirection : bottom; slideoutdirection : right; durationin : 2000; durationout : 1000; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1000; showuntil : 2000;">
+						The smartest slideshow plugin
+					</h2>
+					<h2  class="ls-s3 l1-s4" style="top:373px; left: 400px; slidedirection : top; slideoutdirection : bottom; durationin : 1500; durationout : 1000; easingin : easeOutBack; easingout : easeInOutQuint; delayin : 1000; showuntil : 500;"> 
+						with breathtaking effects!
+					</h2>
+					<h2  class="ls-s3 l1-s4" style="top:330px; left: 50%; slidedirection : left; slideoutdirection : right; durationin : 1200; durationout : 1200; easingin : easeInOutQuart; easingout : easeInOutQuart; delayin : 5000;">
+						Responsive mode with smart-resize feature of images, videos and text!
+					</h2>
+					<h2  class="ls-s3 l1-s3" style="top:373px; left: 50%; slidedirection : right; slideoutdirection : left; durationin : 1200; durationout : 1200; easingin : easeInOutQuart; easingout : easeInOutQuint; delayin : 5000;">
+						Now supports easy sublayer-changing option!
+					</h2>
+					<img class="ls-s1" src="images/layer-gallery/l16.png"  style="top: 313px; left: 728px; slidedirection : bottom; slideoutdirection : bottom;  durationin : 8000; durationout : 1500; easingin : easeOutQuart; easingout : easeInOutQuint; delayin : 2000; " alt="" title="" />
+					<h1  class="ls-s2 l1-s2" style="top:185px; left: 712px; slidedirection : top;  durationin : 2000; durationout : 1500; easingin : easeOutElastic; easingout : easeInOutQuint; delayin : 1500;">
+						3
+					</h1>
+					<h1  class="ls-s2 l1-s2b" style="top:185px; left: 712px; slidedirection : fade; slideoutdirection : fade; durationin : 1700; durationout : 2700; easingin : easeInOutQuad; easingout : easeInOutQuad; delayin : 3500; showuntil : 600;">
+						3
+					</h1>
+					<h2  class="ls-s3 l1-s4" style="top:373px; left: 400px; slidedirection : bottom; slideoutdirection : left; durationin : 1000; durationout : 1000; delayin : 3000; showuntil : 1000;">
+						and the most advanced user interface!
+					</h2>
+
+				</div>
+				
+				<div class="ls-layer" style="slidedirection: right; slidedelay: 4000; durationin: 1500; durationout: 1500; easingin: easeInOutQuint; easingout: easeInOutQuint; delayin: 0; delayout: 0;">
+
+					<img src="images/layer-gallery/tn_1_3.jpg" class="ls-tn" alt="" title="" />
+					<img src="images/layer-gallery/l3.jpg" class="ls-bg" alt="" title="" />
+					<img class="ls-s4" src="images/layer-gallery/l31.png" style="top: 173px; left: 324px;  durationin : 5800;" alt="" title="" />
+					<img class="ls-s3" src="images/layer-gallery/l31.png" style="top: 123px; left: 226px;  durationin : 5800;" alt="" title="" />
+					<img class="ls-s2" src="images/layer-gallery/l31.png" style="top: 250px; left: 260px;  durationin : 5800; durationout : 1300; easingout : easeInOutCirc;" alt="" title="" />
+					<img class="ls-s2" src="images/layer-gallery/l31.png" style="top: 275px; left: 812px;  durationin : 5800;" alt="" title="" />
+					<img class="ls-s3" src="images/layer-gallery/l32.png" style="top: 236px; left: 744px;  durationin : 5600; easingin : easeOutQuad;" alt="" title="" />
+					<img class="ls-s5" src="images/layer-gallery/l33.png" style="top: 291px; left: 731px;  durationin : 2500; easingin : easeOutCirc;" alt="" title="" />
+					<img class="ls-s5" src="images/layer-gallery/l34.png" style="top: 255px; left: 517px;  durationin : 2500; easingin : easeOutCirc;" alt="" title="" />
+					<img class="ls-s6" src="images/layer-gallery/l36.png" style="top: 223px; left: 518px;  durationin : 2000; durationout : 3000; easingin : easeOutCirc; easingout : easeInOutExpo; delayin : 1000; showuntil : 1;" alt="" title="" />
+					<img class="ls-s6" src="images/layer-gallery/l36.png" style="top: 134px; left: 613px;  durationin : 2000; durationout : 2000; easingin : easeOutExpo; delayin : 3300;" alt="" title="" />
+					<img class="ls-s6" src="images/layer-gallery/l36.png" style="top: 30px; left: 439px;  durationin : 2400; durationout : 2000; easingin : easeOutExpo; delayin : 3500;" alt="" title="" />
+					<img class="ls-s7" src="images/layer-gallery/l35.png" style="top: -4px; left: 389px;  durationin : 2000; durationout : 3000; easingin : easeOutCirc; easingout : easeInOutExpo; delayin : 1300; showuntil : 1;" alt="" title="" />
+					<img class="ls-s7" src="images/layer-gallery/l35.png" style="top: 133px; left: 372px;  durationin : 2000; durationout : 1700; easingin : easeOutExpo; delayin : 4000;" alt="" title="" />
+					<p class="ls-s6 l4-s1" style="top:150px; left: 60px; slidedirection : fade; slideoutdirection : top;durationin : 1000; delayin : 1300;">
+						You can customize the plugin
+					</p>
+					<p class="ls-s6 l4-s1" style="top:188px; left: 60px; slidedirection : fade; slideoutdirection : top;durationin : 1000; delayin : 1000;">
+						with setting properties.
+					</p>
+					<p class="ls-s4 l4-s1 l4-s2" style="10px; top:280px; left: 100px;">
+						You can modify the easing,
+					</p>
+					<p class="ls-s7 l4-s1 l4-s2" style="top:318px; left: 100px; slidedirection: left;">
+						delay, duration and also the
+					</p>
+					<p class="ls-s10 l4-s1 l4-s2" style="10px; top:356px; left: 100px;">
+						parallax effect.
+					</p>
+
+				</div>
+
+				<div class="ls-layer" style="slidedirection: top; slidedelay: 4000; durationin: 1500; durationout: 1500; easingin: easeInOutQuint; easingout: easeInOutQuint; delayin: 0; delayout: 0;">
+		
+					<img src="images/layer-gallery/tn_1_4.jpg" class="ls-tn" alt="" title="" />
+					<img src="images/layer-gallery/l2.jpg" class="ls-bg" alt="" title="" />
+					<p class="ls-s2 l2-s1" style="top:50px; left: 50px; slidedirection : top; slideoutdirection : top; delayin : 600;">
+						You can use pictures or any
+					</p>
+					<p class="ls-s3 l2-s1" style="top:88px; left: 50px; slidedirection : top; slideoutdirection : top; delayin : 500;">
+						HTML elements as layers
+					</p>
+					<p class="ls-s6 l2-s1" style="top:190px; left: 90px; slidedirection : left; slideoutdirection : left; delayin : 1500;">
+						You can use as much
+					</p>
+					<p class="ls-s7 l2-s1" style="top:228px; left: 90px; slidedirection : left; slideoutdirection : left; delayin : 1550;">
+						sublayers as you want.
+					</p>
+					<p class="ls-s3 l2-s2" style="top:330px; left: 40px; slidedirection : fade; slideoutdirection : bottom; delayin : 3000;">
+						And you can simply set the direction
+					</p>
+					<p class="ls-s2 l2-s2" style="top:368px; left: 40px; slidedirection : fade; slideoutdirection : bottom; delayin : 3200;">
+						or fading / timing of sublayers and more!
+					</p>
+					<img class="ls-s10" src="images/layer-gallery/l29.png" style="top: 105px; left: 454px; slidedirection : bottom; durationin : 1000; durationout : 1000; easingin : easeOutExpo; delayin : 1000; showuntil : 1000;" alt="" title="" />
+					<img class="ls-s10" src="images/layer-gallery/l29b.png" style="top: 105px; left: 454px; slidedirection : bottom; durationin : 1000; durationout : 1000; easingin : easeOutExpo; delayin : 3000;" alt="" title="" />
+
+				</div>
+				
+				<div class="ls-layer">
+
+					<img src="images/layer-gallery/tn_1_7.jpg" class="ls-tn" alt="" title="" />
+					<img src="images/layer-gallery/l4.jpg" class="ls-bg" alt="" title="" />
+					<img class="ls-s2" src="images/layer-gallery/l45.png" style="top: 30px; left: 50%;  durationin : 3000; durationout : 3000; easingin : linear; easingout : linear; showuntil : 1;" alt="" title="" />
+					<img class="ls-s5" src="images/layer-gallery/l44.png" style="top: 30px; left: 120px;  durationin : 3500; easingin : easeOutExpo; delayin : 300;" alt="" title="" /><a href="http://codecanyon.net/item/layerslider-the-parallax-effect-slider/922100?ref=kreatura"
+					target="_blank" class="ls-s2" style="top: 130px; left:670px; display: block;  durationin : 2000; easingin : easeOutElastic; delayin : 1800; ">
+						<img src="images/layer-gallery/getnow.png" alt="" title="" />
+					</a>
+					<a href="http://codecanyon.net/item/layerslider-the-parallax-effect-slider/922100?ref=kreatura"
+					target="_blank" class="ls-s3" style="top: 200px; left:647px; display: block;  durationin : 2000; easingin : easeOutElastic; delayin : 1900; ">
+						<img src="images/layer-gallery/thiskickass.png" alt="" title="" />
+					</a>
+					<a href="http://codecanyon.net/item/layerslider-the-parallax-effect-slider/922100?ref=kreatura" target="_blank" class="ls-s4" style="top: 270px; left:600px; display: block;  durationin : 2000; easingin : easeOutElastic; delayin : 2000; ">
+						<img src="images/layer-gallery/slideshowplugin.png" alt="" title="" />
+					</a>
+
+				</div>                    
+                    
+                    </div><!-- **Layer Slider Container - End** -->
+                </div> <!-- **Layer Slider - End** -->
             
         </div><!-- **Home Slider BG - End** -->
     </div><!-- **Home Slider - End** -->
@@ -261,11 +372,10 @@ jQuery(function($){
             <a href="#" title="" class="button medium grey"> Purchase Now </a>
         </div>
     </div><!-- **Welcome Text End** -->
-        
     
-    <!-- **Main** -->
+    <!-- ** Main** -->
     <div id="main">
-    
+        
         <!-- **Container** -->
         <div class="container">
         
@@ -490,9 +600,7 @@ jQuery(function($){
                 </ul>
             </div>
         </div>             
-        
     </div><!-- **Main - End**-->
-    
     
     <!-- ** Footer** -->
     <div id="footer">
@@ -571,6 +679,7 @@ jQuery(function($){
                 <div class="column one-fourth last">
                     <div class="widget tweetbox"> 
                         <h2 class="widgettitle"> Email us </h2>
+                        
                         <div class="ajax_message"></div>
                         <form class="sendmail" action="http://iamdesigning.com/client_files/wp-themes/ultimate/html/php/sendmail.php" method="get">
                             <p>

@@ -20,15 +20,17 @@
 	<link rel="stylesheet" type="text/css" href="css/ie8-and-down.css" />
 <![endif]-->
 
+
 <!-- **Google Fonts** -->
 <link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700' rel='stylesheet' type='text/css' />
+
 
 <!-- **jQuery** -->
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/jquery.cookie.js"></script>
+
 <script type="text/javascript" src="js/controlpanel.js"></script>
 
-<script type="text/javascript" src="js/jquery.tabs.min.js"></script>
 <script type="text/javascript" src="js/jquery.jcarousel.min.js"></script>
 <script type="text/javascript" src="js/tinynav.min.js"></script>
 <script type="text/javascript" src="js/ultimate-custom.js"></script>
@@ -45,31 +47,33 @@ jQuery(function($){
   });
 </script>
 
-<link href="css/layerslider.css" rel="stylesheet" type="text/css" media="all" />
-<script src="js/jquery-easing-1.3.js" type="text/javascript"></script>
-<script src="js/layerslider.kreaturamedia.jquery.js" type="text/javascript"></script>
-<script type="text/javascript">
-	$(document).ready(function(){
-		$('#layerslider').layerSlider({
-			skinsPath : 'images/layer-skins/',
-			skin : 'fullwidth',
-			thumbnailNavigation : 'hover',
-			hoverPrevNext : false,
-			responsive : false,
-			responsiveUnder : 940,
-			sublayerContainer : 900
-		});
-	});		
-</script>	
+<link href="css/fmslideshow.min.css" rel="stylesheet" type="text/css" />
+<script src="js/fmslideshow.min.js" type="text/javascript"></script>
 
-<!-- Pretty Photo -->
-<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" title="prettyPhoto main stylesheet" charset="utf-8" />
-<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
-<script type="text/javascript" charset="utf-8">
-	jQuery(document).ready(function($){			
-		$(".gallery a[rel^='prettyPhoto']").prettyPhoto({animation_speed:'normal',theme:'light_square',slideshow:3000, autoplay_slideshow: false,social_tools: false});				
+<script type="text/javascript">
+
+	jQuery(function($){
+		$('#jq_fmslideshow').fmslideshow({
+			
+			//Note: if you need to modify further see the available variable in fmslideshow.js file.
+			
+			image_sprite: "images/fmslideshow/sprite.png",
+			image_loader: "images/fmslideshow/loader_img.png",
+			
+			button_nextPrevious_type : 2,
+			
+			banner_width : '100%',
+			banner_height : 420,
+			
+			buttons_align : 'BC',
+			buttons_spacing:'-37,0'
+			
+			
+		});
 	});
+
 </script>
+
 
 <script type="text/javascript" src="js/jquery.validate.min.js"></script>
 <script type="text/javascript" src="js/sendmail.js"></script>
@@ -90,17 +94,7 @@ jQuery(function($){
                 <a href="index.html" title=""> <img src="images/logo.png" alt="" title="" /> </a>
             </div><!-- **Logo - End** -->        
             
-            <div class="float-right">
-                <!-- **Social icons** -->
-                <div class="social-icons">
-                    <a href="#" title="" class="facebook"> </a>
-                    <a href="#" title="" class="twitter"> </a>
-                    <a href="#" title="" class="youtube"> </a>
-                    <a href="#" title="" class="flickr"> </a>
-                    <a href="#" title="" class="google"> </a>
-                    <a href="#" title="" class="yahoo"> </a>
-                    <a href="#" title="" class="linkedin"> </a>
-                </div><!-- **Social icons** -->
+            <div class="float-right">              
                 
                 <!-- **Searchform** -->
                 <form action="#" id="searchform" method="get">
@@ -118,16 +112,16 @@ jQuery(function($){
     <div id="top-menu">
         <div class="container">
         
-            <ul class="menu">
-                <li class="home current_page_item">  <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="index.html" title=""> Home </a> 
+            <ul class="menu menu-rounded">
+                <li class="home">  <a href="index.html" title=""> Home </a> 
                     <ul>
                         <li> <a href="index-v2.html" title=""> Home - Multi Purpose </a> </li>
                         <li> <a href="index-v3.html" title=""> Home - Portfolio </a> </li>
-                        <li> <a href="index-v4.html" title=""> Home - Blog </a> </li>
+                        <li class="current_page_item"> <a href="index-v4.html" title=""> Home - Blog </a> </li>
                         <li> <a href="index.html" title=""> Home - Business </a> </li>
                     </ul>                
                 </li> 
-                <li> <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="slider-nivo.html" title=""> Sliders </a> 
+                <li> <a href="slider-nivo.html" title=""> Sliders </a> 
                     <ul>
                         <li> <a href="slider-nivo.html" title=""> Nivo Slider </a> </li>
                         <li> <a href="slider-anything.html" title=""> Anything Slider </a> </li>
@@ -136,7 +130,7 @@ jQuery(function($){
                         <li> <a href="slider-cycle.html" title=""> Cycle Slider </a> </li>
                     </ul>                
                 </li> 
-                <li> <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="features-html-elements.html" title=""> Features </a> 
+                <li> <a href="features-html-elements.html" title=""> Features </a> 
                     <ul>
                     	<li> <a href="features-html-elements.html" title=""> Useful HTML Elements </a> </li>
                         <li> <a href="features-home-page-layouts.html" title=""> 4 Home Page Layouts </a> </li>
@@ -152,7 +146,7 @@ jQuery(function($){
                         <li> <a href="features-psd-files.html" title=""> 29 PSD files </a> </li>
                     </ul>                
                 </li>
-                <li> <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="typography.html" title=""> Styled Elements </a> 
+                <li> <a href="typography.html" title=""> Styled Elements </a> 
                     <ul>
                         <li> <a href="typography.html" title=""> Typography </a> </li>
                         <li> <a href="buttons.html" title=""> Buttons </a> </li>
@@ -161,7 +155,7 @@ jQuery(function($){
                         <li> <a href="toggles-accordions.html" title=""> Toggles and Accordions </a> </li>
                     </ul>                
                 </li>
-                <li> <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="portfolio-three-column.html" title=""> Portfolio </a> 
+                <li> <a href="portfolio-three-column.html" title=""> Portfolio </a> 
                 
                     <ul>
                         <li> <a href="portfolio-one-column.html" title=""> One Column </a> 
@@ -189,7 +183,7 @@ jQuery(function($){
                     </ul>
                 
                 </li>
-                <li> <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="blog-with-right-sidebar.html" title=""> Blog </a> 
+                <li> <a href="blog-with-right-sidebar.html" title=""> Blog </a> 
                     <ul>
                         <li> <a href="blog-full-width.html" title=""> Blog Full width </a> </li>
                         <li> <a href="blog-with-right-sidebar.html" title=""> Blog With Right Sidebar </a> </li>
@@ -198,7 +192,7 @@ jQuery(function($){
                         <li> <a href="blog-single.html" title=""> Blog Detail </a> </li>
                     </ul>                
                 </li>
-                <li> <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="about.html" title=""> Pages </a> 
+                <li> <a href="about.html" title=""> Pages </a> 
                     <ul>
                         <li> <a href="about.html" title=""> Team </a> </li>
                         <li> <a href="404.html" title=""> 404 </a> </li>
@@ -208,7 +202,7 @@ jQuery(function($){
                         <li> <a href="sitemap.html" title=""> Sitemap </a> </li>
                     </ul>                
                 </li>
-                <li> <span class="hoverL"> <span class="hoverR"> </span> </span> <a href="contact.html" title=""> Contact Us </a> 
+                <li> <a href="contact.html" title=""> Contact Us </a> 
                 	<ul>
                     	<li> <a href="contact.html" title=""> Contact - Layout 1 </a> </li>
                         <li> <a href="contact-v2.html" title=""> Contact - Layout 2 </a> </li>
@@ -224,48 +218,67 @@ jQuery(function($){
     <div id="home-slider">
         <!-- **Home Slider BG** -->
         <div class="home-slider-bg">
+        
+        	<!-- **Slider Full Width** -->
+            <div class="slider-fullwidth">
             
-            <!-- Layer Slider Container -->
-            <div id="layerslider-container-fw">                
-                <div id="layerslider" style="width:100%; height: 420px; margin: 0px auto; ">
-    
-                    <div class="ls-layer" style="slidedirection: top; slidedelay: 7000; durationin: 1500; durationout: 1500; delayout: 500;">
-                        <img src="images/layer-gallery/fw1.jpg" class="ls-bg" alt="" title="" />
-                        <p class="ls-s2 l23-s1" style="position: absolute; top:85%; left: 50%; slidedirection : bottom; slideoutdirection : top; durationin : 750; durationout : 750; easingin : easeOutBack; easingout : easeInBack; delayin : 1000;"> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In elit sapien </p>    
-                    </div>
-    
-                    <div class="ls-layer" style="slidedirection: right; slidedelay: 7000; durationin: 1500; durationout: 1500;">    
-                        <img src="images/layer-gallery/fw3.jpg" class="ls-bg" alt="" title="" />
-                        <p class="ls-s2 l22-s1" style="position: absolute; top:75%; left: 0px; slidedirection : right; slideoutdirection : left; durationin : 1500; durationout : 750; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin : 1000;">Sed a posuere mauris. Integer justo sem, venenatis vitae elementum non, porta sit amet quam</p>
-                        <p class="ls-s3 l22-s1" style="position: absolute; top:85%; left: 0px; slidedirection : right; slideoutdirection : left; durationin : 1500; durationout : 750; easingin : easeInOutQuint; easingout : easeInOutQuint; delayin : 1500;"> Cras elementum varius dictum. Sed viverra sodales sollicitudin. Duis vel urna odio </p>    
-                    </div>
-    
-                    <div class="ls-layer" style="slidedirection: top; slidedelay: 7000; durationin: 1500; durationout: 1500; delayout: 500;">    
-                        <img src="images/layer-gallery/fw2.jpg" class="ls-bg" alt="" title="" />
-                        <p class="ls-s2 l23-s1" style="position: absolute; top:85%; left: 50%; slidedirection : top; slideoutdirection : bottom; durationin : 750; durationout : 750; easingin : easeOutBack; easingout : easeInBack; delayin : 1000;">Praesent nunc nisi, tempor eu ullamcorper non, fermentum at massa  </p>
-                    </div>
-    
-                </div><!-- Layer Slider -->                            
-            </div><!-- Layer Slider Container -->
+            
+                <div id="jq_fmslideshow" align="left" >                
+                    <div id="fmslideshow" style="visibility:hidden">                       
+                        
+                        
+                        <!--Slide 1 -->
+                        <div> 
+                             <img data-spacing="0,0" class="imgSty" src="images/post-images/fullwidth-slider2.jpg" alt="fmslideshow" /> 
+                             <div data-align="TL" data-spacing="90,20" data-inOutDirection="RL" data-inOutDistance="120" class="divStyle" style="width:350px">
+                                <span class="txtMedium" style="background-color:#37393a; color:#fff; padding:5px 10px;"> Title Text Goes here </span>
+                            </div>
+                            
+                             <div data-align="TL" data-spacing="5,20" data-inOutDirection="RL" data-inOutDistance="120" class="divStyle" style="width:350px"> 
+                             	<div id="bg" style="background-color:#fff" class="textBg"></div>    	
+                                <div class="txtExNormal">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Aliquam posuere lobortis pede nullam fringilla. </div>
+                            </div>
+                        </div><!--Slide 1 -->
+                        
+                        
+                         <!--Slide 2 -->
+                         <div> 
+                             <img data-spacing="0,0" class="imgSty" src="images/post-images/fullwidth-slider4.jpg" alt="fmslideshow" /> 
+                             <div data-align="TR" data-spacing="90,20" data-inOutDirection="RL" data-inOutDistance="120" class="divStyle" style="width:400px">
+                                <span class="txtMedium" style="background-color:#37393a; color:#fff; padding:5px 10px;">Title Text Goes here</span>
+                            </div>
+                            
+                             <div data-align="TR" data-spacing="5,20" data-inOutDirection="RL" data-inOutDistance="120" class="divStyle" style="width:400px">
+                                <div id="bg" style="background-color:#fff" class="textBg"></div>
+                                <span class="txtNormal">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec molestie. Aliquam posuere lobortis pede nullam fringilla. Donec molestie <a href="http://codecanyon.net/" target="_blank">Click here</a> </span>
+                            </div>                            
+                        </div><!--Slide 2 -->
+                        
+                        
+                         <!--Slide 3 -->
+                        <div> 
+                             <img data-spacing="0,0" class="imgSty" src="images/post-images/fullwidth-slider3.jpg" alt="fmslideshow" /> 
+                             <div data-align="BL" data-spacing="0,0" data-inOutDirection="BB" data-inOutDistance="170" class="divStyle" style="width:500px" >
+                                <div id="bg" style="background-color:#251a16" class="textBg"></div>
+                                <div class="txtExNormal" style="padding:20px; color:#fff; font-style:normal;">
+                                   Show your product image and description with nice animation. Aliquam posuere lobortis pede nullam fringilla. Class aptent taciti socio Aliquam posuere lobortis pede nullam fringilla. Class aptent taciti socio. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. 
+                                </div> 
+                            </div>                            
+                        </div><!--Slide 3 -->
+                        
+                
+                    </div>                
+                </div>
+            
+            
+            </div><!-- **Slider Full Width - End** -->
             
         </div><!-- **Home Slider BG - End** -->
     </div><!-- **Home Slider - End** -->
     
-    <!-- **Welcome Text** -->
-    <div class="welcome-text">
-    	<div class="container">
-            <div class="text">
-                <h1> Ultimate is a Multi Purpose Responsive Template With Clean Design </h1>
-                <h4> Lorem ipsum dolor sit amet, consectetur adipiscing elit </h4>
-            </div>
-            <a href="#" title="" class="button medium grey"> Purchase Now </a>
-        </div>
-    </div><!-- **Welcome Text End** -->
-        
-    
-    <!-- **Main** -->
+    <!-- ** Main** -->
     <div id="main">
-    
+        
         <!-- **Container** -->
         <div class="container">
         
@@ -277,171 +290,165 @@ jQuery(function($){
                 <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer velit enim, consequat pellentesque pellentesque ac, rutrum sed enim. Pellentesque interdum pharetra urna, vitae dapibus metus vulputate sed. Integer velit sapien, placerat vel malesuada quis, molestie adipiscing magna. In hac habitasse platea dictumst.  </p>
                 <a href="about.html" title="" class="read-more-text"> Find Out More <span> </span> </a>
                 
-                <!-- **Expand-Toggle** -->   	
-                <div id="expand-toggle">   
-                    <a href="#" title="" class="expand"> We are providing the services with 100% Satisfaction. Click here to expand </a>
-                    <div class="expand-box">
-                        <div class="column one-third">
-                            <h5> Web design Services </h5>
-                            <img src="images/post-images/design.png" alt="" title="" />
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non mauris ac sem porta sollicitudin. Ut congue convallis laoreet. Fusce nibh nibh, pharetra in ultricies et, sodales ac velit. Donec faucibus <br /> <a href="about.html" title="" class="read-more-text"> Read More <span> </span> </a></p>
-                        </div>
-                        <div class="column one-third">
-                            <h5> Our Mission Statement </h5>
-                            <img src="images/post-images/mission.png" alt="" title="" />
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non mauris ac sem porta sollicitudin. Ut congue convallis laoreet. Fusce nibh nibh, pharetra in ultricies et, sodales ac velit. Donec faucibus pellentesque odio. <br /> <a href="about.html" title="" class="read-more-text"> Read More <span> </span> </a></p>
-                        </div>
-                        <div class="column one-third last">
-                            <h5> Timely Support </h5>
-                            <img src="images/post-images/support.png" alt="" title="" />
-                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris non mauris ac sem porta sollicitudin. Ut congue convallis laoreet. Fusce nibh nibh, pharetra in ultricies et, sodales ac velit. Donec faucibus pellentesque odio. <br /> <a href="about.html" title="" class="read-more-text"> Read More <span> </span> </a></p>
-                        </div>
-                    </div>
-                </div><!-- **Expand-Toggle - End** -->
-                
                 <div class="clear"> </div>
                 
-                <div class="column one-third">
-                    <h3> Easy Customization </h3>
-                    <div class="thumb"> 
-                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column6.jpg" alt="" title="" /> </a> 
-                    </div>
-                    <p> Sed vitae nunc tellus. Sed justo ante, iaculis sed adipiscing ac, tempus vitae sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque augue. </p>
-                    <a href="about.html" title="" class="readmore"> <span> Read More </span></a>
-                </div> 
-                <div class="column one-third">
-                    <h3> Multiple portfolio Columns </h3>
+                <div class="hr-invisible"> </div>
+                
+                <h2> Popular Posts </h2>
+                
+                <div class="column one-half">
+                    <!-- **Blog Post** -->
+                    <div class="blog-post">
                     
-                    <div class="thumb"> 
-                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column8.jpg" alt="" title="" /> </a> 
-                    </div>
-                    
-                    <p> Sed vitae nunc tellus. Sed justo ante, iaculis sed adipiscing ac, tempus vitae sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque augue. </p>
-                    <a href="about.html" title="" class="readmore"> <span> Read More </span></a>
+                        <div class="post-title">
+                            <h3> <a href="blog-single.html" title=""> Lorem ipsum dolor sit amet </a> </h3>
+                            <div class="date">
+                                <p> 28 </p>
+                                <span> Nov <br /> 2012 </span>
+                            </div>
+                        </div>
+                        
+                        <div class="entry-head">
+                            <span class="author"> Posted By : Lorem Ipsum </span>
+                            <a href="#" class="comments"> 15 comments </a>
+                        </div>  
+                        
+                        <div class="post-thumb"> 
+                            <a href="#" title=""> <img src="images/post-images/blog1.jpg" alt="" title="" width="453" height="179" /> <span class="zoom"> </span> </a>
+                        </div>
+                        
+                        <div class="post-details">
+                            <div class="categories"> Categories : <a href="#" title=""> Lorem, </a> <a href="#" title=""> Ipsum, </a> <a href="#" title=""> Dolor </a> </div>
+                            <div class="tags"> 
+                                <div class="float-right"> Tags : <a href="#" title=""> Web, </a>  <a href="#" title=""> Design </a> </div> 
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero dui, a facilisis turpis. Phasellus non dui facilisis lorem mollis tempor in nec orci. Duis ullamcorper rhoncus sodales. Integer lorem orci, consequat vel laoreet eu, viverra sed justo. Etiam vel nibh ac purus cursus pellentesque eget at ligula.  </p>
+                            
+                            <a href="about.html" title="" class="readmore"> <span> Read More </span></a>
+                        </div>
+                         
+                    </div><!-- **Blog Post - End** -->                
+                    <div class="hr"> </div>
                 </div>
-                <div class="column one-third last">
-                    <h3> 10 Amazing skins </h3>
-                    <div class="thumb"> 
-                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column9.jpg" alt="" title="" /> </a> 
-                    </div>
-                    <p> Sed vitae nunc tellus. Sed justo ante, iaculis sed adipiscing ac, tempus vitae sem. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Pellentesque augue. </p>
-                    <a href="about.html" title="" class="readmore"> <span> Read More </span></a>
-                </div>  
                 
-                
-                <div class="clear"> </div>
-                <div class="hr"> </div>
-                
-                <h2> Featured Portfolio </h2>
-                
-                <!-- **Portfolio** -->
-            	<div class="portfolio column-one-third gallery">
-                
-                    <div class="portfolio-skin-carousel">
-                        <ul class="portfolio-carousel">
-                			<li class="column one-third">
-                                <div>
-                                    <div class="thumb"> 
-                                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column1.jpg" alt="" title="" width="290" height="182" /> </a> 
-                                        <div class="image-overlay"> 
-                                            <a href="http://vimeo.com/55331511" target="_blank" rel="prettyPhoto[gallery]" class="image-overlay-video"> </a>
-                                            <a href="http://iamdesigning.com/" target="_blank" class="image-overlay-link">  </a> 
-                                        </div> 
-                                    </div>
-                                    <h4> <a href="#" title=""> Lorem ipsum dolor sit amet </a> </h4>
-                                    <div class="buttons"> 
-                                        <a href="portfolio_single.html" title="" class="button small light-grey"> <span> View Project </span></a>
-                                        <a href="http://iamdesigning.com/" title="" class="button small light-grey" target="_blank"> <span> Go to site </span></a>
-                                    </div>
-                                </div> 
-                            </li>
-                            <li class="column one-third">
-                                <div>
-                                    <div class="thumb"> 
-                                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column2.jpg" alt="" title="" width="290" height="182" /> </a> 
-                                        <div class="image-overlay"> 
-                                            <a href="http://vimeo.com/55331511" target="_blank" rel="prettyPhoto[gallery]" class="image-overlay-video"> </a>
-                                            <a href="http://iamdesigning.com/" target="_blank" class="image-overlay-link">  </a> 
-                                        </div> 
-                                    </div>
-                                    <h4> <a href="#" title=""> Lorem ipsum dolor sit amet </a> </h4>
-                                    <div class="buttons"> 
-                                       <a href="portfolio_single.html" title="" class="button small light-grey"> <span> View Project </span></a>
-                                        <a href="http://iamdesigning.com/" title="" class="button small light-grey" target="_blank"> <span> Go to site </span></a>
-                                    </div>
-                                </div>
-                            </li>
-                            <li class="column one-third">
-                                <div>
-                                    <div class="thumb"> 
-                                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column3.jpg" alt="" title="" width="290" height="182" /> </a> 
-                                        <div class="image-overlay"> 
-                                            <a href="images/post-images/portfolio-full-image.jpg" rel="prettyPhoto[gallery]" class="image-overlay-zoom">  </a> 
-                                            <a href="http://iamdesigning.com/" target="_blank" class="image-overlay-link">  </a> 
-                                        </div> 
-                                    </div>
-                                    <h4> <a href="#" title="">Lorem ipsum dolor sit amet </a> </h4>
-                                    <div class="buttons"> 
-                                        <a href="portfolio_single.html" title="" class="button small light-grey"> <span> View Project </span></a>
-                                        <a href="http://iamdesigning.com/" title="" class="button small light-grey" target="_blank"> <span> Go to site </span></a>
-                                    </div>
-                                </div>
-                            </li>  
-                            <li class="column one-third">
-                                <div>
-                                    <div class="thumb"> 
-                                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column4.jpg" alt="" title="" width="290" height="182" /> </a> 
-                                        <div class="image-overlay"> 
-                                            <a href="images/post-images/portfolio-full-image.jpg" rel="prettyPhoto[gallery]" class="image-overlay-zoom">  </a> 
-                                            <a href="http://iamdesigning.com/" target="_blank" class="image-overlay-link">  </a> 
-                                        </div> 
-                                    </div>
-                                    <h4> <a href="#" title="">Lorem ipsum dolor sit amet </a> </h4>
-                                    <div class="buttons"> 
-                                        <a href="portfolio_single.html" title="" class="button small light-grey"> <span> View Project </span></a>
-                                        <a href="http://iamdesigning.com/" title="" class="button small light-grey" target="_blank"> <span> Go to site </span></a>
-                                    </div>
-                                </div>
-                            </li>                    
-                            <li class="column one-third">
-                                <div>
-                                    <div class="thumb"> 
-                                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column5.jpg" alt="" title="" width="290" height="182" /> </a> 
-                                        <div class="image-overlay"> 
-                                            <a href="images/post-images/portfolio-full-image.jpg" rel="prettyPhoto[gallery]" class="image-overlay-zoom">  </a> 
-                                            <a href="http://iamdesigning.com/" target="_blank" class="image-overlay-link">  </a> 
-                                        </div> 
-                                    </div>
-                                    <h4> <a href="#" title="">Lorem ipsum dolor sit amet </a> </h4>
-                                    <div class="buttons"> 
-                                        <a href="portfolio_single.html" title="" class="button small light-grey"> <span> View Project </span></a>
-                                        <a href="http://iamdesigning.com/" title="" class="button small light-grey" target="_blank"> <span> Go to site </span></a>
-                                    </div>
-                                </div>
-                            </li>                    
-                            <li class="column one-third">
-                                <div>
-                                    <div class="thumb"> 
-                                        <a href="#" title=""> <img src="images/post-images/portfolio-three-column6.jpg" alt="" title="" width="290" height="182" /> </a> 
-                                        <div class="image-overlay"> 
-                                            <a href="images/post-images/portfolio-full-image.jpg" rel="prettyPhoto[gallery]" class="image-overlay-zoom">  </a> 
-                                            <a href="http://iamdesigning.com/" target="_blank" class="image-overlay-link">  </a> 
-                                        </div> 
-                                    </div>
-                                    <h4> <a href="#" title="">Lorem ipsum dolor sit amet </a> </h4>
-                                    <div class="buttons"> 
-                                        <a href="portfolio_single.html" title="" class="button small light-grey"> <span> View Project </span></a>
-                                        <a href="http://iamdesigning.com/" title="" class="button small light-grey" target="_blank"> <span> Go to site </span></a>
-                                    </div>
-                                </div>
-                            </li>                    
-                        </ul>
-                    </div>
+                <div class="column one-half last">
+                    <!-- **Blog Post** -->
+                    <div class="blog-post">
                     
-                </div><!-- **Portfolio - End** --> 	 
-                 
+                        <div class="post-title">
+                            <h3> <a href="blog-single.html" title=""> Lorem ipsum dolor sit amet </a> </h3>
+                            <div class="date">
+                                <p> 28 </p>
+                                <span> Nov <br /> 2012 </span>
+                            </div>
+                        </div>
+                        
+                        <div class="entry-head">
+                            <span class="author"> Posted By : Lorem Ipsum </span>
+                            <a href="#" class="comments"> 15 comments </a>
+                        </div>  
+                        
+                        <div class="post-thumb"> 
+                            <a href="#" title=""> <img src="images/post-images/blog2.jpg" alt="" title="" width="453" height="179" /> <span class="zoom"> </span> </a>
+                        </div>
+                        
+                        <div class="post-details">
+                            <div class="categories"> Categories : <a href="#" title=""> Lorem, </a> <a href="#" title=""> Ipsum, </a> <a href="#" title=""> Dolor </a> </div>
+                            <div class="tags"> 
+                                <div class="float-right"> Tags : <a href="#" title=""> Web, </a>  <a href="#" title=""> Design </a> </div> 
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero dui, a facilisis turpis. Phasellus non dui facilisis lorem mollis tempor in nec orci. Duis ullamcorper rhoncus sodales. Integer lorem orci, consequat vel laoreet eu, viverra sed justo. Etiam vel nibh ac purus cursus pellentesque eget at ligula.  </p>
+                            
+                            <a href="about.html" title="" class="readmore"> <span> Read More </span></a>
+                        </div>
+                         
+                    </div><!-- **Blog Post - End** -->                
+                    <div class="hr"> </div>
+                </div>
+                
+                <div class="column one-half">
+                    <!-- **Blog Post** -->
+                    <div class="blog-post">
+                    
+                        <div class="post-title">
+                            <h3> <a href="blog-single.html" title=""> Lorem ipsum dolor sit amet </a> </h3>
+                            <div class="date">
+                                <p> 28 </p>
+                                <span> Nov <br /> 2012 </span>
+                            </div>
+                        </div>
+                        
+                        <div class="entry-head">
+                            <span class="author"> Posted By : Lorem Ipsum </span>
+                            <a href="#" class="comments"> 15 comments </a>
+                        </div>  
+                        
+                        <div class="post-thumb"> 
+                            <a href="#" title=""> <img src="images/post-images/blog3.jpg" alt="" title="" width="453" height="179" /> <span class="zoom"> </span> </a>
+                        </div>
+                        
+                        <div class="post-details">
+                            <div class="categories"> Categories : <a href="#" title=""> Lorem, </a> <a href="#" title=""> Ipsum, </a> <a href="#" title=""> Dolor </a> </div>
+                            <div class="tags"> 
+                                <div class="float-right"> Tags : <a href="#" title=""> Web, </a>  <a href="#" title=""> Design </a> </div> 
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero dui, a facilisis turpis. Phasellus non dui facilisis lorem mollis tempor in nec orci. Duis ullamcorper rhoncus sodales. Integer lorem orci, consequat vel laoreet eu, viverra sed justo. Etiam vel nibh ac purus cursus pellentesque eget at ligula.  </p>
+                            
+                            <a href="about.html" title="" class="readmore"> <span> Read More </span></a>
+                        </div>
+                         
+                    </div><!-- **Blog Post - End** -->                
+                    <div class="hr"> </div>
+                </div>
+                
+                <div class="column one-half last">
+                    <!-- **Blog Post** -->
+                    <div class="blog-post">
+                    
+                        <div class="post-title">
+                            <h3> <a href="blog-single.html" title=""> Lorem ipsum dolor sit amet </a> </h3>
+                            <div class="date">
+                                <p> 28 </p>
+                                <span> Nov <br /> 2012 </span>
+                            </div>
+                        </div>
+                        
+                        <div class="entry-head">
+                            <span class="author"> Posted By : Lorem Ipsum </span>
+                            <a href="#" class="comments"> 15 comments </a>
+                        </div>  
+                        
+                        <div class="post-thumb"> 
+                            <a href="#" title=""> <img src="images/post-images/blog1.jpg" alt="" title="" width="453" height="179" /> <span class="zoom"> </span> </a>
+                        </div>
+                        
+                        <div class="post-details">
+                            <div class="categories"> Categories : <a href="#" title=""> Lorem, </a> <a href="#" title=""> Ipsum, </a> <a href="#" title=""> Dolor </a> </div>
+                            <div class="tags"> 
+                                <div class="float-right"> Tags : <a href="#" title=""> Web, </a>  <a href="#" title=""> Design </a> </div> 
+                            </div>
+                        </div>
+                        
+                        <div class="post-content">
+                            <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed a libero dui, a facilisis turpis. Phasellus non dui facilisis lorem mollis tempor in nec orci. Duis ullamcorper rhoncus sodales. Integer lorem orci, consequat vel laoreet eu, viverra sed justo. Etiam vel nibh ac purus cursus pellentesque eget at ligula.  </p>
+                            
+                            <a href="about.html" title="" class="readmore"> <span> Read More </span></a>
+                        </div>
+                         
+                    </div><!-- **Blog Post - End** -->                
+                    <div class="hr"> </div>
+                </div>
+                
                 <div class="clear"> </div> 
-                <div class="hr"> </div>
                 
                 <div class="column one-half">
                 	<h2> Why Choose us </h2>
@@ -469,30 +476,12 @@ jQuery(function($){
                         <input name="" type="submit" value="Subscribe Now" />
                     </form>
                 </div>   
-                                
+                
+                
             </div> <!-- **Content Full Width - End** -->   	
             
         </div><!-- **Container - End** -->
-        
-        
-        <div class="clients-skin-carousel">
-            <div class="container">
-            	<h2> Our Clients </h2>
-                <ul class="clients-carousel">  
-                    <li> <a href="#" title=""> <img src="images/post-images/client1.png" alt="" title="" /> </a> </li>
-                    <li> <a href="#" title=""> <img src="images/post-images/client2.png" alt="" title="" /> </a> </li>
-                    <li> <a href="#" title=""> <img src="images/post-images/client3.png" alt="" title="" /> </a> </li>
-                    <li> <a href="#" title=""> <img src="images/post-images/client4.png" alt="" title="" /> </a> </li>
-                    <li> <a href="#" title=""> <img src="images/post-images/client5.png" alt="" title="" /> </a> </li>
-                    <li> <a href="#" title=""> <img src="images/post-images/client6.png" alt="" title="" /> </a> </li>
-                    <li> <a href="#" title=""> <img src="images/post-images/client7.png" alt="" title="" /> </a> </li>
-                    <li> <a href="#" title=""> <img src="images/post-images/client8.png" alt="" title="" /> </a> </li>
-                </ul>
-            </div>
-        </div>             
-        
     </div><!-- **Main - End**-->
-    
     
     <!-- ** Footer** -->
     <div id="footer">
