@@ -13,6 +13,7 @@
 <link id="skin-css" href="skins/blue.css" rel="stylesheet" type="text/css" media="all" />
 <link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
 <link id="responsive-css" href="responsive.css" rel="stylesheet" type="text/css" media="all" />
+<link href="css/flipclock.css" rel="stylesheet" type="text/css" media="all" />
 
 <!-- mobile setting -->
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
@@ -38,6 +39,9 @@
 <script type="text/javascript" src="js/ultimate-custom.js"></script>
 
 <script type="text/javascript" src="js/jquery.tweet.js" charset="utf-8"></script>
+
+<script type="text/javascript" src="js/flipclock.min.js"></script>
+
 <script type="text/javascript">
 jQuery(function($){
 	$(".tweets").tweet({
@@ -81,7 +85,13 @@ $(window).load(function() {
         
             <!-- **Logo** -->
             <div id="logo">
-                <a href="index.html" title=""> <img src="images/logo.png" alt="" title="" /> </a>
+                <!--<a href="index-v2.html" title=""> <img src="images/logo.png" alt="" title="" /> </a>-->
+                
+                <div class="clock" style="display: none;">
+                    <div class="logo-box">
+                        <div class="logo">made|media</div>
+                    </div>
+                </div>
             </div><!-- **Logo - End** -->        
             
             <div class="float-right">
