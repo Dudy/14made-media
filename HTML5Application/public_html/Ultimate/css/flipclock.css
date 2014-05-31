@@ -142,7 +142,10 @@
     -ms-transform-origin: 50% 0;
     -o-transform-origin: 50% 0;
     transform-origin: 50% 0;
-    bottom: 0; }
+    bottom: 0; 
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
 
 .flip-clock-wrapper ul li a div div.inn {
     position: absolute;
@@ -258,7 +261,8 @@
     z-index: 2;
     -webkit-animation: turn 0.5s 0.5s linear both;
     -moz-animation: turn 0.5s 0.5s linear both;
-    animation: turn 0.5s 0.5s linear both; }
+    animation: turn 0.5s 0.5s linear both; 
+}
 
 @-webkit-keyframes turn {
     0% {
@@ -369,7 +373,9 @@
     background: linear, to bottom, black 0%, rgba(0, 0, 0, 0.1) 100%;
     -webkit-animation: hide 0.5s 0.3s linear both;
     -moz-animation: hide 0.5s 0.3s linear both;
-    animation: hide 0.5s 0.2s linear both; }
+    animation: hide 0.5s 0.2s linear both; 
+    display: none;
+}
 
 @-webkit-keyframes show {
     0% {
@@ -430,6 +436,17 @@
 /* ------------------------------------------------------- */
 .clock {
     margin: 20px;
+ 
+    // change the "1.00" to scale arbitraryly
+    transform-origin: 0 0;
+    transform: scale(1.00);
+    -ms-transform: scale(1.00);
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(1.00);
+    -o-transform-origin: 0 0;
+    -o-transform: scale(1.00);
+    -moz-transform-origin: 0 0;
+    -moz-transform: scale(1.00);
 }
 
 .logo-box {
@@ -456,5 +473,29 @@
     border-radius: 5px;
     
     text-shadow: 0 0 5px rgba(0,0,0,.55);
+}
+
+.scale_half {
+    transform-origin: 0 0;
+    transform: scale(0.50);
+    -ms-transform: scale(0.50);
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(0.50);
+    -o-transform-origin: 0 0;
+    -o-transform: scale(0.50);
+    -moz-transform-origin: 0 0;
+    -moz-transform: scale(0.50);
+}
+
+.scale_double {
+    transform-origin: 0 0;
+    transform: scale(2.00);
+    -ms-transform: scale(2.00);
+    -webkit-transform-origin: 0 0;
+    -webkit-transform: scale(2.00);
+    -o-transform-origin: 0 0;
+    -o-transform: scale(2.00);
+    -moz-transform-origin: 0 0;
+    -moz-transform: scale(2.00);
 }
 /* ------------------------------------------------------- */
